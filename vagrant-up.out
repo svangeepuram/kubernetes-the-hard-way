@@ -1,4 +1,20 @@
+git clone https://github.com/svangeepuram/kubernetes-the-hard-way.git
+cd kubernetes-the-hard-way/
+sudo vi /etc/apt/sources.list
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | \
+     sudo tee -a /etc/apt/sources.list.d/virtualbox.list
+sudo apt-get update
+sudo apt-get install virtualbox-6.1
+sudo apt install virtualbox-ext-pack
+curl -O https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb
+sudo apt install ./vagrant_2.2.9_x86_64.deb
+vagrant --version
+cd 
+cd kubernetes-the-hard-way/vagrant/
 vagrant up
+
 Bringing machine 'master-1' up with 'virtualbox' provider...
 Bringing machine 'master-2' up with 'virtualbox' provider...
 Bringing machine 'master-3' up with 'virtualbox' provider...
