@@ -1,0 +1,486 @@
+vagrant up
+Bringing machine 'master-1' up with 'virtualbox' provider...
+Bringing machine 'master-2' up with 'virtualbox' provider...
+Bringing machine 'master-3' up with 'virtualbox' provider...
+Bringing machine 'loadbalancer' up with 'virtualbox' provider...
+Bringing machine 'worker-1' up with 'virtualbox' provider...
+Bringing machine 'worker-2' up with 'virtualbox' provider...
+==> master-1: Box 'ubuntu/bionic64' could not be found. Attempting to find and install...
+    master-1: Box Provider: virtualbox
+    master-1: Box Version: >= 0
+==> master-1: Loading metadata for box 'ubuntu/bionic64'
+    master-1: URL: https://vagrantcloud.com/ubuntu/bionic64
+==> master-1: Adding box 'ubuntu/bionic64' (v20201201.0.0) for provider: virtualbox
+    master-1: Downloading: https://vagrantcloud.com/ubuntu/boxes/bionic64/versions/20201201.0.0/providers/virtualbox.box
+Download redirected to host: cloud-images.ubuntu.com
+==> master-1: Successfully added box 'ubuntu/bionic64' (v20201201.0.0) for 'virtualbox'!
+==> master-1: Importing base box 'ubuntu/bionic64'...
+==> master-1: Matching MAC address for NAT networking...
+==> master-1: Setting the name of the VM: kubernetes-ha-master-1
+Vagrant is currently configured to create VirtualBox synced folders with
+the `SharedFoldersEnableSymlinksCreate` option enabled. If the Vagrant
+guest is not trusted, you may want to disable this option. For more
+information on this option, please refer to the VirtualBox manual:
+
+  https://www.virtualbox.org/manual/ch04.html#sharedfolders
+
+This option can be disabled globally with an environment variable:
+
+  VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
+
+or on a per folder basis within the Vagrantfile:
+
+  config.vm.synced_folder '/host/path', '/guest/path', SharedFoldersEnableSymlinksCreate: false
+==> master-1: Clearing any previously set network interfaces...
+==> master-1: Preparing network interfaces based on configuration...
+    master-1: Adapter 1: nat
+    master-1: Adapter 2: hostonly
+==> master-1: Forwarding ports...
+    master-1: 22 (guest) => 2711 (host) (adapter 1)
+    master-1: 22 (guest) => 2222 (host) (adapter 1)
+==> master-1: Running 'pre-boot' VM customizations...
+==> master-1: Booting VM...
+==> master-1: Waiting for machine to boot. This may take a few minutes...
+    master-1: SSH address: 127.0.0.1:2222
+    master-1: SSH username: vagrant
+    master-1: SSH auth method: private key
+    master-1: Warning: Connection reset. Retrying...
+    master-1: Warning: Remote connection disconnect. Retrying...
+    master-1: 
+    master-1: Vagrant insecure key detected. Vagrant will automatically replace
+    master-1: this with a newly generated keypair for better security.
+    master-1: 
+    master-1: Inserting generated public key within guest...
+    master-1: Removing insecure key from the guest if it's present...
+    master-1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> master-1: Machine booted and ready!
+==> master-1: Checking for guest additions in VM...
+    master-1: The guest additions on this VM do not match the installed version of
+    master-1: VirtualBox! In most cases this is fine, but in rare cases it can
+    master-1: prevent things such as shared folders from working properly. If you see
+    master-1: shared folder errors, please make sure the guest additions within the
+    master-1: virtual machine match the version of VirtualBox you have installed on
+    master-1: your host and reload your VM.
+    master-1: 
+    master-1: Guest Additions Version: 5.2.42
+    master-1: VirtualBox Version: 6.1
+==> master-1: Setting hostname...
+==> master-1: Configuring and enabling network interfaces...
+==> master-1: Mounting shared folders...
+    master-1: /vagrant => /home/chary/kubernetes-the-hard-way/vagrant
+==> master-1: Running provisioner: setup-hosts (shell)...
+    master-1: Running: /tmp/vagrant-shell20201203-57100-85sw59.sh
+==> master-1: Running provisioner: setup-dns (shell)...
+    master-1: Running: /tmp/vagrant-shell20201203-57100-1spuwqr.sh
+==> master-1: Running provisioner: file...
+    master-1: ./ubuntu/cert_verify.sh => $HOME/
+==> master-2: Box 'ubuntu/bionic64' could not be found. Attempting to find and install...
+    master-2: Box Provider: virtualbox
+    master-2: Box Version: >= 0
+==> master-2: Loading metadata for box 'ubuntu/bionic64'
+    master-2: URL: https://vagrantcloud.com/ubuntu/bionic64
+==> master-2: Adding box 'ubuntu/bionic64' (v20201201.0.0) for provider: virtualbox
+==> master-2: Importing base box 'ubuntu/bionic64'...
+==> master-2: Matching MAC address for NAT networking...
+==> master-2: Setting the name of the VM: kubernetes-ha-master-2
+==> master-2: Fixed port collision for 22 => 2222. Now on port 2200.
+==> master-2: Clearing any previously set network interfaces...
+==> master-2: Preparing network interfaces based on configuration...
+    master-2: Adapter 1: nat
+    master-2: Adapter 2: hostonly
+==> master-2: Forwarding ports...
+    master-2: 22 (guest) => 2712 (host) (adapter 1)
+    master-2: 22 (guest) => 2200 (host) (adapter 1)
+==> master-2: Running 'pre-boot' VM customizations...
+==> master-2: Booting VM...
+==> master-2: Waiting for machine to boot. This may take a few minutes...
+    master-2: SSH address: 127.0.0.1:2200
+    master-2: SSH username: vagrant
+    master-2: SSH auth method: private key
+    master-2: Warning: Connection reset. Retrying...
+    master-2: Warning: Remote connection disconnect. Retrying...
+    master-2: Warning: Remote connection disconnect. Retrying...
+    master-2: 
+    master-2: Vagrant insecure key detected. Vagrant will automatically replace
+    master-2: this with a newly generated keypair for better security.
+    master-2: 
+    master-2: Inserting generated public key within guest...
+    master-2: Removing insecure key from the guest if it's present...
+    master-2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> master-2: Machine booted and ready!
+==> master-2: Checking for guest additions in VM...
+    master-2: The guest additions on this VM do not match the installed version of
+    master-2: VirtualBox! In most cases this is fine, but in rare cases it can
+    master-2: prevent things such as shared folders from working properly. If you see
+    master-2: shared folder errors, please make sure the guest additions within the
+    master-2: virtual machine match the version of VirtualBox you have installed on
+    master-2: your host and reload your VM.
+    master-2: 
+    master-2: Guest Additions Version: 5.2.42
+    master-2: VirtualBox Version: 6.1
+==> master-2: Setting hostname...
+==> master-2: Configuring and enabling network interfaces...
+==> master-2: Mounting shared folders...
+    master-2: /vagrant => /home/chary/kubernetes-the-hard-way/vagrant
+==> master-2: Running provisioner: setup-hosts (shell)...
+    master-2: Running: /tmp/vagrant-shell20201203-57100-1oygzpr.sh
+==> master-2: Running provisioner: setup-dns (shell)...
+    master-2: Running: /tmp/vagrant-shell20201203-57100-vwz554.sh
+==> master-2: Running provisioner: file...
+    master-2: ./ubuntu/cert_verify.sh => $HOME/
+==> master-3: Box 'ubuntu/bionic64' could not be found. Attempting to find and install...
+    master-3: Box Provider: virtualbox
+    master-3: Box Version: >= 0
+==> master-3: Loading metadata for box 'ubuntu/bionic64'
+    master-3: URL: https://vagrantcloud.com/ubuntu/bionic64
+==> master-3: Adding box 'ubuntu/bionic64' (v20201201.0.0) for provider: virtualbox
+==> master-3: Importing base box 'ubuntu/bionic64'...
+==> master-3: Matching MAC address for NAT networking...
+==> master-3: Setting the name of the VM: kubernetes-ha-master-3
+==> master-3: Fixed port collision for 22 => 2222. Now on port 2201.
+==> master-3: Clearing any previously set network interfaces...
+==> master-3: Preparing network interfaces based on configuration...
+    master-3: Adapter 1: nat
+    master-3: Adapter 2: hostonly
+==> master-3: Forwarding ports...
+    master-3: 22 (guest) => 2713 (host) (adapter 1)
+    master-3: 22 (guest) => 2201 (host) (adapter 1)
+==> master-3: Running 'pre-boot' VM customizations...
+==> master-3: Booting VM...
+==> master-3: Waiting for machine to boot. This may take a few minutes...
+    master-3: SSH address: 127.0.0.1:2201
+    master-3: SSH username: vagrant
+    master-3: SSH auth method: private key
+    master-3: Warning: Remote connection disconnect. Retrying...
+    master-3: 
+    master-3: Vagrant insecure key detected. Vagrant will automatically replace
+    master-3: this with a newly generated keypair for better security.
+    master-3: 
+    master-3: Inserting generated public key within guest...
+    master-3: Removing insecure key from the guest if it's present...
+    master-3: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> master-3: Machine booted and ready!
+==> master-3: Checking for guest additions in VM...
+    master-3: The guest additions on this VM do not match the installed version of
+    master-3: VirtualBox! In most cases this is fine, but in rare cases it can
+    master-3: prevent things such as shared folders from working properly. If you see
+    master-3: shared folder errors, please make sure the guest additions within the
+    master-3: virtual machine match the version of VirtualBox you have installed on
+    master-3: your host and reload your VM.
+    master-3: 
+    master-3: Guest Additions Version: 5.2.42
+    master-3: VirtualBox Version: 6.1
+==> master-3: Setting hostname...
+==> master-3: Configuring and enabling network interfaces...
+==> master-3: Mounting shared folders...
+    master-3: /vagrant => /home/chary/kubernetes-the-hard-way/vagrant
+==> master-3: Running provisioner: setup-hosts (shell)...
+    master-3: Running: /tmp/vagrant-shell20201203-57100-1733vox.sh
+==> master-3: Running provisioner: setup-dns (shell)...
+    master-3: Running: /tmp/vagrant-shell20201203-57100-1146ktt.sh
+==> master-3: Running provisioner: file...
+    master-3: ./ubuntu/cert_verify.sh => $HOME/
+==> loadbalancer: Box 'ubuntu/bionic64' could not be found. Attempting to find and install...
+    loadbalancer: Box Provider: virtualbox
+    loadbalancer: Box Version: >= 0
+==> loadbalancer: Loading metadata for box 'ubuntu/bionic64'
+    loadbalancer: URL: https://vagrantcloud.com/ubuntu/bionic64
+==> loadbalancer: Adding box 'ubuntu/bionic64' (v20201201.0.0) for provider: virtualbox
+==> loadbalancer: Importing base box 'ubuntu/bionic64'...
+==> loadbalancer: Matching MAC address for NAT networking...
+==> loadbalancer: Setting the name of the VM: kubernetes-ha-lb
+==> loadbalancer: Fixed port collision for 22 => 2222. Now on port 2202.
+==> loadbalancer: Clearing any previously set network interfaces...
+==> loadbalancer: Preparing network interfaces based on configuration...
+    loadbalancer: Adapter 1: nat
+    loadbalancer: Adapter 2: hostonly
+==> loadbalancer: Forwarding ports...
+    loadbalancer: 22 (guest) => 2730 (host) (adapter 1)
+    loadbalancer: 22 (guest) => 2202 (host) (adapter 1)
+==> loadbalancer: Running 'pre-boot' VM customizations...
+==> loadbalancer: Booting VM...
+==> loadbalancer: Waiting for machine to boot. This may take a few minutes...
+    loadbalancer: SSH address: 127.0.0.1:2202
+    loadbalancer: SSH username: vagrant
+    loadbalancer: SSH auth method: private key
+    loadbalancer: Warning: Remote connection disconnect. Retrying...
+    loadbalancer: 
+    loadbalancer: Vagrant insecure key detected. Vagrant will automatically replace
+    loadbalancer: this with a newly generated keypair for better security.
+    loadbalancer: 
+    loadbalancer: Inserting generated public key within guest...
+    loadbalancer: Removing insecure key from the guest if it's present...
+    loadbalancer: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> loadbalancer: Machine booted and ready!
+==> loadbalancer: Checking for guest additions in VM...
+    loadbalancer: The guest additions on this VM do not match the installed version of
+    loadbalancer: VirtualBox! In most cases this is fine, but in rare cases it can
+    loadbalancer: prevent things such as shared folders from working properly. If you see
+    loadbalancer: shared folder errors, please make sure the guest additions within the
+    loadbalancer: virtual machine match the version of VirtualBox you have installed on
+    loadbalancer: your host and reload your VM.
+    loadbalancer: 
+    loadbalancer: Guest Additions Version: 5.2.42
+    loadbalancer: VirtualBox Version: 6.1
+==> loadbalancer: Setting hostname...
+==> loadbalancer: Configuring and enabling network interfaces...
+==> loadbalancer: Mounting shared folders...
+    loadbalancer: /vagrant => /home/chary/kubernetes-the-hard-way/vagrant
+==> loadbalancer: Running provisioner: setup-hosts (shell)...
+    loadbalancer: Running: /tmp/vagrant-shell20201203-57100-1dw61g2.sh
+==> loadbalancer: Running provisioner: setup-dns (shell)...
+    loadbalancer: Running: /tmp/vagrant-shell20201203-57100-175av20.sh
+==> worker-1: Box 'ubuntu/bionic64' could not be found. Attempting to find and install...
+    worker-1: Box Provider: virtualbox
+    worker-1: Box Version: >= 0
+==> worker-1: Loading metadata for box 'ubuntu/bionic64'
+    worker-1: URL: https://vagrantcloud.com/ubuntu/bionic64
+==> worker-1: Adding box 'ubuntu/bionic64' (v20201201.0.0) for provider: virtualbox
+==> worker-1: Importing base box 'ubuntu/bionic64'...
+==> worker-1: Matching MAC address for NAT networking...
+==> worker-1: Setting the name of the VM: kubernetes-ha-worker-1
+==> worker-1: Fixed port collision for 22 => 2222. Now on port 2203.
+==> worker-1: Clearing any previously set network interfaces...
+==> worker-1: Preparing network interfaces based on configuration...
+    worker-1: Adapter 1: nat
+    worker-1: Adapter 2: hostonly
+==> worker-1: Forwarding ports...
+    worker-1: 22 (guest) => 2721 (host) (adapter 1)
+    worker-1: 22 (guest) => 2203 (host) (adapter 1)
+==> worker-1: Running 'pre-boot' VM customizations...
+==> worker-1: Booting VM...
+==> worker-1: Waiting for machine to boot. This may take a few minutes...
+    worker-1: SSH address: 127.0.0.1:2203
+    worker-1: SSH username: vagrant
+    worker-1: SSH auth method: private key
+    worker-1: Warning: Remote connection disconnect. Retrying...
+    worker-1: 
+    worker-1: Vagrant insecure key detected. Vagrant will automatically replace
+    worker-1: this with a newly generated keypair for better security.
+    worker-1: 
+    worker-1: Inserting generated public key within guest...
+    worker-1: Removing insecure key from the guest if it's present...
+    worker-1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> worker-1: Machine booted and ready!
+==> worker-1: Checking for guest additions in VM...
+    worker-1: The guest additions on this VM do not match the installed version of
+    worker-1: VirtualBox! In most cases this is fine, but in rare cases it can
+    worker-1: prevent things such as shared folders from working properly. If you see
+    worker-1: shared folder errors, please make sure the guest additions within the
+    worker-1: virtual machine match the version of VirtualBox you have installed on
+    worker-1: your host and reload your VM.
+    worker-1: 
+    worker-1: Guest Additions Version: 5.2.42
+    worker-1: VirtualBox Version: 6.1
+==> worker-1: Setting hostname...
+==> worker-1: Configuring and enabling network interfaces...
+==> worker-1: Mounting shared folders...
+    worker-1: /vagrant => /home/chary/kubernetes-the-hard-way/vagrant
+==> worker-1: Running provisioner: setup-hosts (shell)...
+    worker-1: Running: /tmp/vagrant-shell20201203-57100-1iir3kr.sh
+==> worker-1: Running provisioner: setup-dns (shell)...
+    worker-1: Running: /tmp/vagrant-shell20201203-57100-omgk07.sh
+==> worker-1: Running provisioner: install-docker (shell)...
+    worker-1: Running: /tmp/vagrant-shell20201203-57100-1rqs7pa.sh
+    worker-1: # Executing docker install script, commit: 26ff363bcf3b3f5a00498ac43694bf1c7d9ce16c
+    worker-1: + 
+    worker-1: sh
+    worker-1:  -c
+    worker-1:  apt-get update -qq >/dev/null
+    worker-1: + sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq apt-transport-https ca-certificates curl >/dev/null
+    worker-1: + sh -c curl -fsSL "https://download.docker.com/linux/ubuntu/gpg" | apt-key add -qq - >/dev/null
+    worker-1: Warning: apt-key output should not be parsed (stdout is not a terminal)
+    worker-1: + sh -c echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" > /etc/apt/sources.list.d/docker.list
+    worker-1: + sh -c apt-get update -qq >/dev/null
+    worker-1: + 
+    worker-1: [
+    worker-1:  -n
+    worker-1:  
+    worker-1:  ]
+    worker-1: + 
+    worker-1: sh
+    worker-1:  -c
+    worker-1:  apt-get install -y -qq --no-install-recommends docker-ce >/dev/null
+    worker-1: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    worker-1: + 
+    worker-1: sh
+    worker-1:  -c
+    worker-1:  docker version
+    worker-1: Client: Docker Engine - Community
+    worker-1:  Version:
+    worker-1:         
+    worker-1:    
+    worker-1: 19.03.14
+    worker-1:  API version:
+    worker-1:        1.40
+    worker-1:  Go version:        go1.13.15
+    worker-1:  Git commit:        
+    worker-1: 5eb3275d40
+    worker-1:  Built:             Tue Dec  1 19:20:17 2020
+    worker-1:  OS/Arch:           
+    worker-1: linux/amd64
+    worker-1:  Experimental:      false
+    worker-1: Server: Docker Engine - Community
+    worker-1:  Engine:
+    worker-1:   Version:          19.03.14
+    worker-1:   API version:      1.40 (minimum version 1.12)
+    worker-1:   Go version:       go1.13.15
+    worker-1:   Git commit:       5eb3275d40
+    worker-1:   Built:            Tue Dec  1 19:18:45 2020
+    worker-1:   OS/Arch:          linux/amd64
+    worker-1:   Experimental:     false
+    worker-1:  containerd:
+    worker-1:   Version:          1.3.9
+    worker-1:   GitCommit:        ea765aba0d05254012b0b9e595e995c09186427f
+    worker-1:  runc:
+    worker-1:   Version:          1.0.0-rc10
+    worker-1:   GitCommit:        dc9208a3303feef5b3839f4323d9beb36df0a9dd
+    worker-1:  docker-init:
+    worker-1:   Version:          0.18.0
+    worker-1:   GitCommit:        fec3683
+    worker-1: If you would like to use Docker as a non-root user, you should now consider
+    worker-1: adding your user to the "docker" group with something like:
+    worker-1: 
+    worker-1:   sudo usermod -aG docker your-user
+    worker-1: 
+    worker-1: Remember that you will have to log out and back in for this to take effect!
+    worker-1: 
+    worker-1: WARNING: Adding a user to the "docker" group will grant the ability to run
+    worker-1:          containers which can be used to obtain root privileges on the
+    worker-1:          docker host.
+    worker-1:          Refer to https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface
+    worker-1:          for more information.
+==> worker-1: Running provisioner: allow-bridge-nf-traffic (shell)...
+    worker-1: Running: /tmp/vagrant-shell20201203-57100-g6hr5g.sh
+    worker-1: net.bridge.bridge-nf-call-iptables = 1
+==> worker-1: Running provisioner: file...
+    worker-1: ./ubuntu/cert_verify.sh => $HOME/
+==> worker-2: Box 'ubuntu/bionic64' could not be found. Attempting to find and install...
+    worker-2: Box Provider: virtualbox
+    worker-2: Box Version: >= 0
+==> worker-2: Loading metadata for box 'ubuntu/bionic64'
+    worker-2: URL: https://vagrantcloud.com/ubuntu/bionic64
+==> worker-2: Adding box 'ubuntu/bionic64' (v20201201.0.0) for provider: virtualbox
+==> worker-2: Importing base box 'ubuntu/bionic64'...
+==> worker-2: Matching MAC address for NAT networking...
+==> worker-2: Setting the name of the VM: kubernetes-ha-worker-2
+==> worker-2: Fixed port collision for 22 => 2222. Now on port 2204.
+==> worker-2: Clearing any previously set network interfaces...
+==> worker-2: Preparing network interfaces based on configuration...
+    worker-2: Adapter 1: nat
+    worker-2: Adapter 2: hostonly
+==> worker-2: Forwarding ports...
+    worker-2: 22 (guest) => 2722 (host) (adapter 1)
+    worker-2: 22 (guest) => 2204 (host) (adapter 1)
+==> worker-2: Running 'pre-boot' VM customizations...
+==> worker-2: Booting VM...
+==> worker-2: Waiting for machine to boot. This may take a few minutes...
+    worker-2: SSH address: 127.0.0.1:2204
+    worker-2: SSH username: vagrant
+    worker-2: SSH auth method: private key
+    worker-2: Warning: Connection reset. Retrying...
+    worker-2: Warning: Remote connection disconnect. Retrying...
+    worker-2: 
+    worker-2: Vagrant insecure key detected. Vagrant will automatically replace
+    worker-2: this with a newly generated keypair for better security.
+    worker-2: 
+    worker-2: Inserting generated public key within guest...
+    worker-2: Removing insecure key from the guest if it's present...
+    worker-2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> worker-2: Machine booted and ready!
+==> worker-2: Checking for guest additions in VM...
+    worker-2: The guest additions on this VM do not match the installed version of
+    worker-2: VirtualBox! In most cases this is fine, but in rare cases it can
+    worker-2: prevent things such as shared folders from working properly. If you see
+    worker-2: shared folder errors, please make sure the guest additions within the
+    worker-2: virtual machine match the version of VirtualBox you have installed on
+    worker-2: your host and reload your VM.
+    worker-2: 
+    worker-2: Guest Additions Version: 5.2.42
+    worker-2: VirtualBox Version: 6.1
+==> worker-2: Setting hostname...
+==> worker-2: Configuring and enabling network interfaces...
+==> worker-2: Mounting shared folders...
+    worker-2: /vagrant => /home/chary/kubernetes-the-hard-way/vagrant
+==> worker-2: Running provisioner: setup-hosts (shell)...
+    worker-2: Running: /tmp/vagrant-shell20201203-57100-1oiej2v.sh
+==> worker-2: Running provisioner: setup-dns (shell)...
+    worker-2: Running: /tmp/vagrant-shell20201203-57100-1eq3kdf.sh
+==> worker-2: Running provisioner: install-docker (shell)...
+    worker-2: Running: /tmp/vagrant-shell20201203-57100-1lf9i6m.sh
+    worker-2: # Executing docker install script, commit: 26ff363bcf3b3f5a00498ac43694bf1c7d9ce16c
+    worker-2: + 
+    worker-2: sh
+    worker-2:  -c
+    worker-2:  apt-get update -qq >/dev/null
+    worker-2: + sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq apt-transport-https ca-certificates curl >/dev/null
+    worker-2: + sh -c curl -fsSL "https://download.docker.com/linux/ubuntu/gpg" | apt-key add -qq - >/dev/null
+    worker-2: Warning: apt-key output should not be parsed (stdout is not a terminal)
+    worker-2: + sh -c echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" > /etc/apt/sources.list.d/docker.list
+    worker-2: + sh -c apt-get update -qq >/dev/null
+    worker-2: + 
+    worker-2: [
+    worker-2:  -n
+    worker-2:  
+    worker-2:  ]
+    worker-2: + 
+    worker-2: sh
+    worker-2:  -c
+    worker-2:  apt-get install -y -qq --no-install-recommends docker-ce >/dev/null
+    worker-2: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    worker-2: + 
+    worker-2: sh
+    worker-2:  -c
+    worker-2:  docker version
+    worker-2: Client: Docker Engine - Community
+    worker-2:  Version:
+    worker-2:         
+    worker-2:    
+    worker-2: 19.03.14
+    worker-2:  API version:
+    worker-2:        
+    worker-2: 1.40
+    worker-2: 
+    worker-2:  Go version:        go1.13.15
+    worker-2:  Git commit:        5eb3275d40
+    worker-2:  Built:             Tue Dec  1 19:20:17 2020
+    worker-2:  OS/Arch:           linux/amd64
+    worker-2:  Experimental:      false
+    worker-2: 
+    worker-2: Server: Docker Engine - Community
+    worker-2:  Engine:
+    worker-2:   Version:          19.03.14
+    worker-2:   API version:      1.40 (minimum version 1.12)
+    worker-2:   Go version:       go1.13.15
+    worker-2:   Git commit:       5eb3275d40
+    worker-2:   Built:            Tue Dec  1 19:18:45 2020
+    worker-2:   OS/Arch:          linux/amd64
+    worker-2:   Experimental:     false
+    worker-2:  containerd:
+    worker-2:   Version:          1.3.9
+    worker-2:   GitCommit:        ea765aba0d05254012b0b9e595e995c09186427f
+    worker-2:  runc:
+    worker-2:   Version:          1.0.0-rc10
+    worker-2:   GitCommit:        dc9208a3303feef5b3839f4323d9beb36df0a9dd
+    worker-2:  docker-init:
+    worker-2:   Version:          0.18.0
+    worker-2:   GitCommit:        fec3683
+    worker-2: If you would like to use Docker as a non-root user, you should now consider
+    worker-2: adding your user to the "docker" group with something like:
+    worker-2: 
+    worker-2:   sudo usermod -aG docker your-user
+    worker-2: 
+    worker-2: Remember that you will have to log out and back in for this to take effect!
+    worker-2: 
+    worker-2: WARNING: Adding a user to the "docker" group will grant the ability to run
+    worker-2:          containers which can be used to obtain root privileges on the
+    worker-2:          docker host.
+    worker-2:          Refer to https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface
+    worker-2:          for more information.
+==> worker-2: Running provisioner: allow-bridge-nf-traffic (shell)...
+    worker-2: Running: /tmp/vagrant-shell20201203-57100-12wlq3y.sh
+    worker-2: net.bridge.bridge-nf-call-iptables = 1
+==> worker-2: Running provisioner: file...
+    worker-2: ./ubuntu/cert_verify.sh => $HOME/
+chary@krishi:~/kubernetes-the-hard-way/vagrant$ 
+
